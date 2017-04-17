@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DefaultNotificationCenterDelegate:class {
-    
+    //代理方法做什么用呢?
     func defaultNotificationCenter(_ notificationName: String, object: AnyObject?)
     
     
@@ -44,6 +44,7 @@ class DefaultNotificationCenter: NSObject {
             model.name = name
             notificationModels.append(model)
             
+            //会调用代理方法
             NotificationCenter.default.addObserver(self, selector: #selector(DefaultNotificationCenter.notificationEvent(_:)), name: NSNotification.Name(model.name), object: nil)
             
         }
@@ -103,10 +104,11 @@ class DefaultNotificationCenter: NSObject {
     }
     
     
-    
+    //通知事件
     func notificationEvent(_ obj: AnyObject?){
         
         let notification = obj as! Notification
+        //调用代理方法
         delegate?.defaultNotificationCenter(notification.name.rawValue, object:notification.object as AnyObject?)
     }
     
