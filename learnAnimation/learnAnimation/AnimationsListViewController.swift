@@ -48,14 +48,13 @@ class AnimationsListViewController: CustomNormalContentViewController,DefaultNot
             adapters.append(ListItemCell.Adapter( data: ControllerItem(controllerClass: controllerClass, name: name)))
             
             
-            //添加控制器
-            
-            
-            
-            
-            
-            
         }
+        
+        //添加控制器
+        add(HeaderViewTapAnimationController.classForCoder(), name: "UITableView展开缩放动画")
+        
+        
+        
         
         var indexPaths = [IndexPath]()
         for i in 0 ..< self.adapters.count {
