@@ -25,6 +25,7 @@ class HeaderViewTapAnimationController: NormalTitleViewController,UITableViewDel
         tableView.delegate = self
         tableView.rowHeight = 60
         tableView.sectionHeaderHeight = 30
+        tableView.separatorStyle = .none
         contentView?.addSubview(tableView!)
         
         ClassHeaderView.RegisterTo(tableView)

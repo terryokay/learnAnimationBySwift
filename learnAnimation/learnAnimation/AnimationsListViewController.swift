@@ -33,6 +33,7 @@ class AnimationsListViewController: CustomNormalContentViewController,DefaultNot
         tableView.showsVerticalScrollIndicator = false
         contentView?.addSubview(tableView)
         
+        //注册的cell
         ListItemCell.RegisterTo(tableView)
         
         
@@ -133,8 +134,9 @@ class AnimationsListViewController: CustomNormalContentViewController,DefaultNot
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueCellAndLoadContentFromAdapter(adapters[(indexPath as NSIndexPath).row], indexPath: indexPath, controller: self)
         
-        return tableView.dequeueCellAndLoadContentFromAdapter(adapters[(indexPath as NSIndexPath).row], indexPath: indexPath, controller: self)
+        return cell
         
     }
     

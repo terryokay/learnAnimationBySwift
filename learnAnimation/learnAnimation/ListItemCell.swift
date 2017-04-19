@@ -36,10 +36,25 @@ class ListItemCell: CustomCell {
         
     
         let item = data as! ControllerItem
+        
+        titlelabel.text = item.name
+        subTitleLabel.text = NSStringFromClass(item.controllerClass!).components(separatedBy: ".").last
+        
+        
+//        let controller = (item.controllerClass as! CustomViewController.Type).init()
+//        
+//        controller.title = item.name
+//        
+//        self.controller?.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    override func selectedEvent() {
+        
+        let item = data as! ControllerItem
         let controller = (item.controllerClass as! CustomViewController.Type).init()
         
         controller.title = item.name
-        
         self.controller?.navigationController?.pushViewController(controller, animated: true)
     }
     
