@@ -68,7 +68,7 @@ class ClassHeaderView: CustomHeaderFooterView {
         }
     }
     
-    
+    //headerView上按钮点击事件
     func buttonEvent(){
         
         let model = data as! ClassModel

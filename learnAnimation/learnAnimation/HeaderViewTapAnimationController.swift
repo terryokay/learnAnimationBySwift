@@ -27,7 +27,7 @@ class HeaderViewTapAnimationController: NormalTitleViewController,UITableViewDel
         tableView.sectionHeaderHeight = 30
         tableView.separatorStyle = .none
         contentView?.addSubview(tableView!)
-        
+        //注册Cell
         ClassHeaderView.RegisterTo(tableView)
         StudentInfoCell.RegisterTo(tableView)
         
@@ -117,12 +117,14 @@ class HeaderViewTapAnimationController: NormalTitleViewController,UITableViewDel
         
         customCell.data = classModel.students[(indexPath as NSIndexPath).row]
         customCell.indexpath = indexPath
-        customCell.accessibilityElementDidLoseFocus()
+        customCell.loadContent()
         
         return customCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        print("点击了\(indexPath.section)中的\(indexPath.row)")
         
         tableView.selectedEventWithIndexPath(indexPath)
     }
