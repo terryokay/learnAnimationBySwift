@@ -53,7 +53,7 @@ class AnimationsListViewController: CustomNormalContentViewController,DefaultNot
         
         //添加控制器
         add(HeaderViewTapAnimationController.classForCoder(), name: "UITableView展开缩放动画")
-        
+        add(TapCellAnimationController.classForCoder(),       name: "Cell点击动画")
         
         
         
