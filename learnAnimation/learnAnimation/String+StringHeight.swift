@@ -69,7 +69,7 @@ extension String {
         let text   = string as NSString
         let rect   = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context:nil)
         
-        return rect.size.height
+        return rect.size.height//一行文字的高度
     }
     
     /**

@@ -4,7 +4,16 @@
 //
 //  Created by likai on 2017/4/19.
 //  Copyright © 2017年 terry. All rights reserved.
-//
+/*
+ 
+ 
+ 
+ 上下两个View,除了颜色其他设置都一样.
+ 动态调整上面的View的宽度,下面的View就显示出来了,就会出现一种进度条的效果.
+ 
+ 
+ 
+ */
 
 import UIKit
 
@@ -57,8 +66,11 @@ class MixedColorProgressViewController: NormalTitleViewController {
     
     func timerEvent(){
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: { 
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
+            
+            //调整View的宽度,出现进度条的效果.
             self.upView.width = CGFloat(arc4random() % 220)
+            
         }, completion: nil)
     }
     
